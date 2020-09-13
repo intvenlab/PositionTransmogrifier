@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
- <xsl:output method="xml" version="1.0" omit-xml-declaration="no" encoding="UTF-8" indent="yes" />
+  <xsl:output method="xml" version="1.0" omit-xml-declaration="no" encoding="UTF-8" indent="yes" />
 
   <xsl:template match="/">
     <ArrayOfCaptureSequenceList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -55,7 +55,7 @@
               <xsl:value-of select="Decdecimal"/>
             </Dec>
             <Epoch>J2000</Epoch>
-          </Coordinates>          
+          </Coordinates>
           <NegativeDec>false</NegativeDec>
           <CaptureSequence>
             <Enabled>true</Enabled>
@@ -67,11 +67,56 @@
             </Binning>
             <Gain>-1</Gain>
             <Offset>-1</Offset>
-            <TotalExposureCount>1</TotalExposureCount>
+            <TotalExposureCount>30</TotalExposureCount>
             <ProgressExposureCount>0</ProgressExposureCount>
             <Dither>false</Dither>
             <DitherAmount>1</DitherAmount>
           </CaptureSequence>
+        <CaptureSequence>
+          <Enabled>true</Enabled>
+          <ExposureTime>1</ExposureTime>
+          <ImageType>LIGHT</ImageType>
+          <Binning>
+            <X>1</X>
+            <Y>1</Y>
+          </Binning>
+          <Gain>-1</Gain>
+          <Offset>-1</Offset>
+          <TotalExposureCount>2</TotalExposureCount>
+          <ProgressExposureCount>0</ProgressExposureCount>
+          <Dither>false</Dither>
+          <DitherAmount>1</DitherAmount>
+        </CaptureSequence>
+        <CaptureSequence>
+          <Enabled>true</Enabled>
+          <ExposureTime>0.25</ExposureTime>
+          <ImageType>LIGHT</ImageType>
+          <Binning>
+            <X>1</X>
+            <Y>1</Y>
+          </Binning>
+          <Gain>-1</Gain>
+          <Offset>-1</Offset>
+          <TotalExposureCount>2</TotalExposureCount>
+          <ProgressExposureCount>0</ProgressExposureCount>
+          <Dither>false</Dither>
+          <DitherAmount>1</DitherAmount>
+        </CaptureSequence>
+        <CaptureSequence>
+          <Enabled>true</Enabled>
+          <ExposureTime>0.0625</ExposureTime>
+          <ImageType>LIGHT</ImageType>
+          <Binning>
+            <X>1</X>
+            <Y>1</Y>
+          </Binning>
+          <Gain>-1</Gain>
+          <Offset>-1</Offset>
+          <TotalExposureCount>2</TotalExposureCount>
+          <ProgressExposureCount>0</ProgressExposureCount>
+          <Dither>false</Dither>
+          <DitherAmount>1</DitherAmount>
+        </CaptureSequence>
         </CaptureSequenceList>
 
       </xsl:for-each>

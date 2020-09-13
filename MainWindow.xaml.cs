@@ -16,6 +16,8 @@ using System.IO;
 using Microsoft.Win32;
 using ChoETL;
 using System.Text.RegularExpressions;
+using System.Xml.Xsl;
+using System.Xml;
 
 namespace PositionTransmogrifier
 {
@@ -40,10 +42,6 @@ namespace PositionTransmogrifier
             { TemplateComboBox.Items.Add(item); }
             TemplateComboBox.SelectedIndex = 0;
 
-            //TemplateComboBox.Items.Add("ComboQuick");
-            //TemplateComboBox.SelectedIndex = 01;
-            //TemplateComboBox.Items.Add("FUll Set ");
-
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +54,9 @@ namespace PositionTransmogrifier
 
             if (ofd.ShowDialog() == true)
                 InputFileTextbox.Text = ofd.FileName;
+            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", ".ninaTargetSet");
+            if (File.Exists(OutputXMLFile)) { MessageBox.Show("Warning:  " + OutputXMLFile + " exists, converting will overwrite file.");  }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -65,7 +66,7 @@ namespace PositionTransmogrifier
             InputText = Regex.Replace(InputText, ":", "_");
             InputText = Regex.Replace(InputText, "\"", "");
 
-            string OutputXMLFile = InputFileTextbox.Text + ".ninaTargetSet";
+            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", ".ninaTargetSet"); 
 
             StringBuilder sb = new StringBuilder();
             using (var p = ChoCSVReader.LoadText(InputText).WithFirstLineHeader())
@@ -80,7 +81,25 @@ namespace PositionTransmogrifier
             }
             Console.WriteLine(sb.ToString());
 
+            //InputXML = 
+            try
+            {
 
+                StringReader SR_InputXML = new StringReader(sb.ToString());
+                XmlReader xr = XmlReader.Create(SR_InputXML);
+
+                XslCompiledTransform myXSLT;
+                myXSLT = new XslCompiledTransform();
+                myXSLT.Load(TemplateComboBox.SelectedItem.ToString());
+                //myXSLT.Load('C:\Users\3ricj\source\repos\PositionTransmogrifier\bin\Debug\QuickShot.xslt');
+                XmlTextWriter myWriter = new XmlTextWriter(OutputXMLFile, null);
+                myXSLT.Transform(xr, null, myWriter);
+            }
+            catch { MessageBox.Show("Error performing conversion"); }
+
+            MessageBox.Show("Converted file: " + OutputXMLFile);
+
+            System.Windows.Application.Current.Shutdown();
 
         }
     }
