@@ -24,8 +24,11 @@ namespace PositionTransmogrifier
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private string[] files;
+        private string OutputXMLFile;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,11 +38,20 @@ namespace PositionTransmogrifier
         private void UpdateDropdown()
         {
 
-            //DirectoryInfo dir = new DirectoryInfo(System.IO.Directory.GetCurrentDirectory());
-            string[] files = System.IO.Directory.GetFiles(System.IO.Directory.GetCurrentDirectory(), "*.xslt");
-            //Directory dir = System.IO.Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+            string dropdownfilename = "";
+            string basepath = Regex.Replace(System.IO.Directory.GetCurrentDirectory(), "\\\\", "\\\\");
+
+            files = System.IO.Directory.GetFiles(System.IO.Directory.GetCurrentDirectory(), "*.xslt");
+            Console.WriteLine(basepath);
+
             foreach (var item in files)
-            { TemplateComboBox.Items.Add(item); }
+            {
+                dropdownfilename = Regex.Replace(item, basepath + "\\\\", "");
+                dropdownfilename = Regex.Replace(dropdownfilename, ".xslt", "");
+
+
+                TemplateComboBox.Items.Add(dropdownfilename);
+            }
             TemplateComboBox.SelectedIndex = 0;
 
         }
@@ -54,7 +66,8 @@ namespace PositionTransmogrifier
 
             if (ofd.ShowDialog() == true)
                 InputFileTextbox.Text = ofd.FileName;
-            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", ".ninaTargetSet");
+             //OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", ".ninaTargetSet");
+             OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", "-" + TemplateComboBox.SelectedItem.ToString() + ".ninaTargetSet");
             if (File.Exists(OutputXMLFile)) { MessageBox.Show("Warning:  " + OutputXMLFile + " exists, converting will overwrite file.");  }
 
         }
@@ -66,7 +79,7 @@ namespace PositionTransmogrifier
             InputText = Regex.Replace(InputText, ":", "_");
             InputText = Regex.Replace(InputText, "\"", "");
 
-            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", ".ninaTargetSet"); 
+//            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", "-" + TemplateComboBox.SelectedItem.ToString() + ".ninaTargetSet"); 
 
             StringBuilder sb = new StringBuilder();
             using (var p = ChoCSVReader.LoadText(InputText).WithFirstLineHeader())
@@ -90,7 +103,9 @@ namespace PositionTransmogrifier
 
                 XslCompiledTransform myXSLT;
                 myXSLT = new XslCompiledTransform();
-                myXSLT.Load(TemplateComboBox.SelectedItem.ToString());
+//                myXSLT.Load(System.IO.Directory.GetCurrentDirectory() + "\\" + TemplateComboBox.SelectedItem.ToString());
+                myXSLT.Load(files[TemplateComboBox.SelectedIndex]);
+
                 //myXSLT.Load('C:\Users\3ricj\source\repos\PositionTransmogrifier\bin\Debug\QuickShot.xslt');
                 XmlTextWriter myWriter = new XmlTextWriter(OutputXMLFile, null);
                 myXSLT.Transform(xr, null, myWriter);
