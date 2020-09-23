@@ -79,7 +79,10 @@ namespace PositionTransmogrifier
             InputText = Regex.Replace(InputText, ":", "_");
             InputText = Regex.Replace(InputText, "\"", "");
 
-//            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", "-" + TemplateComboBox.SelectedItem.ToString() + ".ninaTargetSet"); 
+            OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", "-" + TemplateComboBox.SelectedItem.ToString() + ".ninaTargetSet");
+
+
+            //            string OutputXMLFile = Regex.Replace(InputFileTextbox.Text, ".csv$", "-" + TemplateComboBox.SelectedItem.ToString() + ".ninaTargetSet"); 
 
             StringBuilder sb = new StringBuilder();
             using (var p = ChoCSVReader.LoadText(InputText).WithFirstLineHeader())
