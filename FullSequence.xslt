@@ -15,42 +15,42 @@
 						<xsl:value-of select="panelname"/>
 					</xsl:attribute>
 					<xsl:attribute name="Mode">STANDARD</xsl:attribute>
-					<xsl:if test="string(@RAhr)">
-						<xsl:attribute name="RAHours">
-							<xsl:value-of select="RAhr"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@RAmin)">
-						<xsl:attribute name="RAMinutes">
-							<xsl:value-of select="RAmin"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@RAsec)">
-						<xsl:attribute name="RASeconds">
-							<xsl:value-of select="RAsec"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@Decdeg)">
-						<xsl:attribute name="DecDegrees">
-							<xsl:value-of select="Decdeg"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@Decmin)">
-						<xsl:attribute name="DecMinutes">
-							<xsl:value-of select="Decmin"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@Decsec)">
-						<xsl:attribute name="DecSeconds">
-							<xsl:value-of select="Decsec"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:if test="string(@Rotdeg)">
-						<xsl:attribute name="Rotation">
-							<xsl:value-of select="Rotdeg"/>
-						</xsl:attribute>
-					</xsl:if>
-					<xsl:attribute name="Delay">0</xsl:attribute>
+          <xsl:if test="RAhr != ''">
+            <xsl:attribute name="RAHours">
+              <xsl:value-of select="RAhr"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="RAmin != ''">
+            <xsl:attribute name="RAMinutes">
+              <xsl:value-of select="RAmin"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="RAsec != ''">
+            <xsl:attribute name="RASeconds">
+              <xsl:value-of select="RAsec"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="Decdeg != ''">
+            <xsl:attribute name="DecDegrees">
+              <xsl:value-of select="Decdeg"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="Decmin != ''">
+            <xsl:attribute name="DecMinutes">
+              <xsl:value-of select="Decmin"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="Decsec != ''">
+            <xsl:attribute name="DecSeconds">
+              <xsl:value-of select="Decsec"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="Rotdeg != ''">
+            <xsl:attribute name="Rotation">
+              <xsl:value-of select="Rotdeg"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:attribute name="Delay">0</xsl:attribute>
 					<xsl:attribute name="SlewToTarget">true</xsl:attribute>
 					<xsl:attribute name="AutoFocusOnStart">false</xsl:attribute>
 					<xsl:attribute name="CenterTarget">true</xsl:attribute>

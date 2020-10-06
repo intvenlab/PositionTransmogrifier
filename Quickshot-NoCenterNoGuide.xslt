@@ -53,8 +53,8 @@
           <xsl:attribute name="Delay">0</xsl:attribute>
           <xsl:attribute name="SlewToTarget">true</xsl:attribute>
           <xsl:attribute name="AutoFocusOnStart">false</xsl:attribute>
-          <xsl:attribute name="CenterTarget">true</xsl:attribute>
-          <xsl:attribute name="StartGuiding">true</xsl:attribute>
+          <xsl:attribute name="CenterTarget">false</xsl:attribute>
+          <xsl:attribute name="StartGuiding">false</xsl:attribute>
           <xsl:attribute name="AutoFocusOnFilterChange">false</xsl:attribute>
           <xsl:attribute name="AutoFocusAfterSetTime">false</xsl:attribute>
           <xsl:attribute name="AutoFocusSetTime">30</xsl:attribute>
@@ -76,7 +76,7 @@
           <NegativeDec>false</NegativeDec>
           <CaptureSequence>
             <Enabled>true</Enabled>
-            <ExposureTime>6</ExposureTime>
+            <ExposureTime>0.1</ExposureTime>
             <ImageType>LIGHT</ImageType>
             <Binning>
               <X>1</X>

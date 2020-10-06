@@ -1,0 +1,7 @@
+﻿panelname,Dec:decimal,RA:decimal,Rot:deg
+Panel1,72,0.0,360
+Panel2,72,6.0,270
+Panel3,72,12.0,180
+Panel4,72,18.0,
+Panel7,36,5.3,
+Test,30.65324204,19.8,63.31183636
