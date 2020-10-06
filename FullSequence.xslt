@@ -67,7 +67,7 @@
             </Binning>
             <Gain>-1</Gain>
             <Offset>-1</Offset>
-            <TotalExposureCount>30</TotalExposureCount>
+            <TotalExposureCount>15</TotalExposureCount>
             <ProgressExposureCount>0</ProgressExposureCount>
             <Dither>false</Dither>
             <DitherAmount>1</DitherAmount>
@@ -120,6 +120,150 @@
         </CaptureSequenceList>
 
       </xsl:for-each>
+  			<CaptureSequenceList Delay="0" Mode="STANDARD" StartGuiding="false" SlewToTarget="false" CenterTarget="false" AutoFocusOnStart="false" AutoFocusOnFilterChange="false" AutoFocusSetTime="30" AutoFocusAfterSetTime="false" AutoFocusSetExposures="10" AutoFocusAfterSetExposures="false" AutoFocusAfterTemperatureChangeAmount="5" AutoFocusAfterTemperatureChange="false" AutoFocusAfterHFRChangeAmount="10" AutoFocusAfterHFRChange="false" TargetName="Masters" RAHours="0" RAMinutes="0" RASeconds="0" DecDegrees="0" DecMinutes="0" DecSeconds="0" Rotation="0">
+				<Coordinates>
+					<RA>0</RA>
+					<Dec>0</Dec>
+					<Epoch>J2000</Epoch>
+				</Coordinates>
+				<NegativeDec>false</NegativeDec>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>12</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>10</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>8</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>6</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>4</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>3</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>2</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>1</ExposureTime>
+					<ImageType>DARK</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+				<CaptureSequence>
+					<Enabled>false</Enabled>
+					<ProgressExposureCount>0</ProgressExposureCount>
+					<TotalExposureCount>30</TotalExposureCount>
+					<ExposureTime>1</ExposureTime>
+					<ImageType>BIAS</ImageType>
+					<Binning>
+						<X>1</X>
+						<Y>1</Y>
+					</Binning>
+					<Dither>false</Dither>
+					<DitherAmount>1</DitherAmount>
+					<Gain>-1</Gain>
+					<Offset>-1</Offset>
+				</CaptureSequence>
+			</CaptureSequenceList>  
+  
     </ArrayOfCaptureSequenceList>
   </xsl:template>
 
