@@ -66,10 +66,10 @@
           <xsl:attribute name="AutoFocusAfterHFRChangeAmount">10</xsl:attribute>
           <Coordinates>
             <RA>
-              <xsl:value-of select="RAdecimal"/>
+              <xsl:value-of select="RAdecimalhr"/>
             </RA>
             <Dec>
-              <xsl:value-of select="Decdecimal"/>
+              <xsl:value-of select="Decdecimaldeg"/>
             </Dec>
             <Epoch>J2000</Epoch>
           </Coordinates>

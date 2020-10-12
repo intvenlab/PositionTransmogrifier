@@ -64,15 +64,15 @@
 					<xsl:attribute name="AutoFocusAfterTemperatureChangeAmount">5</xsl:attribute>
 					<xsl:attribute name="AutoFocusAfterHFRChange">false</xsl:attribute>
 					<xsl:attribute name="AutoFocusAfterHFRChangeAmount">10</xsl:attribute>
-					<Coordinates>
-						<RA>
-							<xsl:value-of select="RAdecimal"/>
-						</RA>
-						<Dec>
-							<xsl:value-of select="Decdecimal"/>
-						</Dec>
-						<Epoch>J2000</Epoch>
-					</Coordinates>
+          <Coordinates>
+            <RA>
+              <xsl:value-of select="RAdecimalhr"/>
+            </RA>
+            <Dec>
+              <xsl:value-of select="Decdecimaldeg"/>
+            </Dec>
+            <Epoch>J2000</Epoch>
+          </Coordinates>
 					<NegativeDec>false</NegativeDec>
 					<CaptureSequence>
 						<Enabled>true</Enabled>
